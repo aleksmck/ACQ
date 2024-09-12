@@ -42,7 +42,7 @@
         <div class="grid-section">
             <h2>Słodko</h2>
             <div class="grid-container">
-                <div class="grid-item" data-row="2" data-col="0">Baking Soda - <a href="https://www.instagram.com/bakingsoda.pl/">link</a></div>
+                <div class="grid-item" data-row="2" data-col="0">Mak Bread - <a href="https://www.instagram.com/mak_bread_coffee/?hl=en">link</a></div>
                 <div class="grid-item" data-row="2" data-col="1">Sweetheart - <a href="https://www.instagram.com/sweetheart_krakow/?locale=no">link</a></div>
                 <div class="grid-item" data-row="2" data-col="2">Cricoteka - <a href="https://www.instagram.com/freshcoffeeplace/?hl=en">link</a></div>
                 <div class="grid-item" data-row="2" data-col="3">Megiddo - <a href="https://www.instagram.com/megiddo.cafe.bakery/?hl=en">link</a></div>
@@ -88,6 +88,8 @@
             "You won special kiss... Ask Aleks!"
         ];
 
+        const meowSound = new Audio('cat-meow.wav');
+
         gridItems.forEach(item => {
             item.addEventListener('click', function () {
                 if (!item.classList.contains('clicked')) {
@@ -96,6 +98,7 @@
                     let row = parseInt(item.getAttribute('data-row'));
                     let col = parseInt(item.getAttribute('data-col'));
                     gridState[row][col] = true;
+                    meowSound.play(); // Play meow sound on click
                     checkForWin();
                 }
             });
@@ -147,9 +150,7 @@
             document.getElementById('popup').classList.add('hidden');
         });
 
-        // Reset Button functionality
         document.getElementById('reset-game').addEventListener('click', function () {
-            // Reset game state without reloading the page
             gridItems.forEach(item => {
                 item.classList.remove('clicked');
                 item.style.backgroundColor = "";
