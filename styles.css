@@ -1,17 +1,19 @@
+/* General Page Styles */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, rgba(167, 142, 220, 0.5), rgba(244, 162, 97, 0.5)), 
+    background: linear-gradient(135deg, rgba(167, 142, 220, 0.4), rgba(244, 162, 97, 0.4)), 
     url('https://angloville.com/wp-content/uploads/2023/05/1-1-1000x500.png') no-repeat center center;
     background-size: cover;
-    font-family: 'Montserrat', sans-serif;
 }
 
-.landing-container {
+/* Landing Page */
+.landing-page {
     text-align: center;
     color: #fff;
 }
@@ -43,5 +45,108 @@ button {
 }
 
 button:hover {
+    background-color: #f4a261;
+}
+
+/* Game Board */
+.hidden {
+    display: none;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    justify-items: center;
+    max-width: 80vw;
+}
+
+/* Grid items */
+.grid-item {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: #76449f;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.grid-item a {
+    color: #FFD700;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.grid-item a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.grid-item.clicked {
+    background-color: #4CAF50;
+}
+
+/* Popup */
+#popup {
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+#popup p {
+    font-size: 20px;
+    color: #333;
+}
+
+#close-popup {
+    padding: 10px 20px;
+    background-color: #f4a261;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#close-popup:hover {
+    background-color: #e76f51;
+}
+
+/* Reset Button */
+#reset-game {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #e76f51;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#reset-game:hover {
     background-color: #f4a261;
 }
