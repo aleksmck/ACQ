@@ -1,3 +1,4 @@
+// Switch from landing page to game
 document.getElementById('start-game').addEventListener('click', function () {
     document.querySelector('.landing-page').style.display = 'none';
     document.querySelector('.game-board').classList.remove('hidden');
@@ -14,16 +15,6 @@ const winMessages = [
     "Okey okey chill GIRL! Now Aleks will bankrupt",
     "You won special kiss... Ask Aleks!"
 ];
-
-// Restore the state of the grid items
-gridItems.forEach(item => {
-    let row = parseInt(item.getAttribute('data-row'));
-    let col = parseInt(item.getAttribute('data-col'));
-    if (gridState[row][col]) {
-        item.classList.add('clicked');
-        item.style.backgroundColor = "#4CAF50"; // Change color on click
-    }
-});
 
 gridItems.forEach(item => {
     item.addEventListener('click', function () {
@@ -86,5 +77,11 @@ document.getElementById('close-popup').addEventListener('click', function () {
 
 // Reset Button functionality
 document.getElementById('reset-game').addEventListener('click', function () {
-    location.reload(); // Reload the page to reset the game
+    gridItems.forEach(item => {
+        item.classList.remove('clicked');
+        item.style.backgroundColor = "";
+    });
+    gridState = Array(4).fill(null).map(() => Array(4).fill(false));
+    prizesWon = 0;
+    document.getElementById('popup').classList.add('hidden');
 });
