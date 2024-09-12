@@ -1,11 +1,13 @@
 document.getElementById('start-game').addEventListener('click', function() {
+    // Smooth transition to the game board
     document.querySelector('.landing-page').classList.add('fade-out');
     setTimeout(function() {
-        document.querySelector('.landing-page').style.display = 'none';
-        document.querySelector('.game-board').classList.remove('hidden');
-        document.querySelector('.game-board').classList.add('fade-in');
-    }, 600);
+        document.querySelector('.landing-page').style.display = 'none'; // Hide the landing page
+        document.querySelector('.game-board').classList.remove('hidden'); // Show the game board
+        document.querySelector('.game-board').classList.add('fade-in');  // Apply fade-in effect
+    }, 600);  // Delay for fade-out animation to complete
 });
+
 
 const gridItems = document.querySelectorAll('.grid-item');
 let gridState = Array(4).fill(null).map(() => Array(4).fill(false));
