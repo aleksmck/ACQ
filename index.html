@@ -3,39 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksandra's Cracow Quest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="landing-container">
-        <div class="content-box">
-            <h1>ALEKSANDRA'S CRACOW QUEST</h1>
-            <h2>Uncover, Explore, Win!</h2>
-            <p></p>
-            <button id="start-quest">Start Your Quest</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleksandra’s Cracow Quest</title>
+    <!-- Link to Super Cool Font -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/super-cool">
 </head>
 <body>
     <div class="landing-page">
         <div class="landing-box">
- <h1>ALEKSANDRA'S CRACOW QUEST</h1>
-            <h2>Uncover, Explore, Win!</h2>
-            <p></p>
-            <button id="start-quest">Start Your Quest</button>
+            <h1>Aleksandra’s Cracow Quest</h1>
+            <p>Uncover, Explore, Win! Are you ready?</p>
+            <button id="start-game">Meow meow MEOW! </button>
+        </div>
+    </div>
+
+    <div class="game-board hidden">
+        <h2>Choose Your Adventures!</h2>
+        <div class="grid-container">
+            <!-- Example of Grid Item -->
+            <div class="grid-item">Piekarnia Zaczyn</div>
+            <div class="grid-item">Zapiekanki</div>
+            <!-- Add your places here -->
+        </div>
+
+        <div id="prize-popup" class="hidden">
+            <p id="prize-text"></p>
+            <button id="close-popup">Close</button>
         </div>
     </div>
 
