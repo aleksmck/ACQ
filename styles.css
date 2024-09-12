@@ -3,7 +3,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, rgba(167, 142, 220, 0.4), rgba(244, 162, 97, 0.4)), 
+                url('https://angloville.com/wp-content/uploads/2023/05/1-1-1000x500.png') no-repeat center center;
+    background-size: cover;
 }
 
 .landing-page, .game-board {
