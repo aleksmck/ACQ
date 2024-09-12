@@ -115,8 +115,12 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Grid item clicked styling */
 .grid-item.clicked {
-    background-color: #7AA35C; /* Change color when clicked */
+    background-color: #7AA35C; /* Color to be applied when the item is clicked */
+    color: #FFF; /* Text color remains white */
+}
+
 }
 
 .grid-item a {
