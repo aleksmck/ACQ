@@ -1,6 +1,7 @@
 /* Import the Lengthwise Font */
 @import url('https://fonts.cdnfonts.com/css/lengthwise');
 
+/* General Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -43,26 +44,30 @@ h1, h2 {
     color: #FFF;
     text-align: center;
     cursor: pointer;
-}
-
-.grid-item a {
-    color: #fff;
-    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .grid-item:hover {
-    background-color: #2A9D8F;
+    background-color: #f4a261;
+    transform: scale(1.05);
 }
 
 .grid-item.clicked {
     background-color: #2A9D8F;
 }
 
-/* Hidden class for popup and game board initially */
-.hidden {
-    display: none;
+.grid-item a {
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
 }
 
+.grid-item a:hover {
+    text-decoration: underline;
+}
+
+/* Popup Styling */
 #popup {
     position: fixed;
     top: 50%;
@@ -73,80 +78,29 @@ h1, h2 {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-/* Import the Lengthwise Font */
-@import url('https://fonts.cdnfonts.com/css/lengthwise');
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Lengthwise', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #a78edc, #f4a261);
+    width: 300px;
 }
 
-.landing-page, .game-board {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+#popup p {
+    font-size: 18px;
+    color: #333;
 }
 
-.grid-section {
-    margin: 20px;
-}
-
-h1, h2 {
-    font-family: 'Lengthwise', sans-serif;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    justify-content: center;
-}
-
-.grid-item {
-    background-color: #a78edc;
-    padding: 20px;
-    border-radius: 10px;
-    color: #FFF;
-    text-align: center;
+#close-popup {
+    padding: 10px 20px;
+    background-color: #f4a261;
+    color: white;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 14px;
 }
 
-.grid-item a {
-    color: #fff;
-    text-decoration: none;
+#close-popup:hover {
+    background-color: #e76f51;
 }
 
-.grid-item:hover {
-    background-color: #2A9D8F;
-}
-
-.grid-item.clicked {
-    background-color: #2A9D8F;
-}
-
-/* Hidden class for popup and game board initially */
+/* Hidden class for initial state */
 .hidden {
     display: none;
-}
-
-#popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
