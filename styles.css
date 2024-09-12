@@ -1,150 +1,81 @@
-/* General Page Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/* General Styles */
+body {
     font-family: 'Lengthwise', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, rgba(167, 142, 220, 0.4), rgba(244, 162, 97, 0.4)), 
-    url('https://angloville.com/wp-content/uploads/2023/05/1-1-1000x500.png') no-repeat center center;
+    background: url('background-cracow.jpg') no-repeat center center fixed;
     background-size: cover;
-}
-
-/* Headings and Titles */
-h1 {
-    font-family: 'Lengthwise', sans-serif;
-    font-size: 52px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-h2 {
-    font-family: 'Lengthwise', sans-serif;
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* Game Board Centering */
-.game-board {
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: auto;
-    width: 100%; /* Ensure full width */
-    margin: 0 auto;
-    padding: 0 20px;
+    justify-content: center;
+    height: 100vh;
 }
 
-/* Grid container for items */
+/* Landing Page */
+.landing-page {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Game Board */
+.game-board {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 20px;
-    justify-items: center;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
 }
 
-/* Add color gradients for each row */
-.grid-section:nth-child(1) .grid-item {
-    background-color: #5e2a88; /* Darkest purple for the first row */
-}
-
-.grid-section:nth-child(2) .grid-item {
-    background-color: #76449f; /* Lighter purple for the second row */
-}
-
-.grid-section:nth-child(3) .grid-item {
-    background-color: #9369b4; /* Even lighter purple */
-}
-
-.grid-section:nth-child(4) .grid-item {
-    background-color: #b092c8; /* Lightest purple */
-}
-
-/* Style for grid items */
 .grid-item {
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    color: #FFF;
+    background-color: lightgrey;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.grid-item.clicked {
-    background-color: #4CAF50; /* Change to green when clicked */
+.grid-item.selected {
+    background-color: #6a1b9a;
+    color: white;
 }
 
-/* Links below text */
-.grid-item a {
-    display: block;
-    margin-top: 8px;
-    color: #FFD700; /* Gold link color */
-    font-size: 14px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.grid-item a:hover {
-    color: #FFF;
-    text-decoration: underline;
-}
-
-/* Popup Styling */
-#popup {
-    z-index: 1000;
+/* Popup */
+.popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
+    background-color: white;
+    padding: 30px;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 350px;
-}
-
-#popup p {
-    font-size: 20px;
-    color: #333;
-}
-
-#close-popup {
-    padding: 10px 20px;
-    background-color: #f4a261;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-#close-popup:hover {
-    background-color: #e76f51;
 }
 
 /* Reset Button */
 #reset-game {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    margin-top: 20px;
     padding: 10px 20px;
-    background-color: #e76f51;
+    background-color: #ff6f00;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-#reset-game:hover {
-    background-color: #f4a261;
 }
