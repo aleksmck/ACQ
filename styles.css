@@ -158,3 +158,61 @@ h2 {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+/* Game Board Centering */
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Adjust grid section for alignment */
+.grid-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; /* Center the grid sections */
+}
+
+/* Grid container for the items */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: start; /* Keep the items aligned to the left inside the centered container */
+}
+
+.grid-item {
+    background-color: #a78edc;
+    padding: 20px;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Add color gradients for rows */
+.grid-section:nth-child(1) .grid-item {
+    background-color: #5e2a88; /* Darkest */
+}
+.grid-section:nth-child(2) .grid-item {
+    background-color: #76449f;
+}
+.grid-section:nth-child(3) .grid-item {
+    background-color: #9369b4;
+}
+.grid-section:nth-child(4) .grid-item {
+    background-color: #b092c8; /* Lightest */
+}
+
+.grid-item:hover {
+    background-color: #7AA35C;
+    transform: scale(1.05);
+}
+
+.grid-item.clicked {
+    background-color: #7AA35C;
+}
