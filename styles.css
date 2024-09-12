@@ -54,6 +54,19 @@ body {
     display: none;
 }
 
+.grid-section {
+    margin-bottom: 2em;
+    width: 100%;
+    max-width: 800px;
+}
+
+.grid-section h2 {
+    color: white;
+    text-align: left;
+    padding: 0.5em;
+    margin: 0;
+}
+
 .game-board {
     display: flex;
     flex-direction: column;
@@ -80,6 +93,10 @@ body {
     text-align: center;
     border-radius: 8px;
     cursor: pointer;
+    height: 100px; /* Ensure uniform height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-item a {
