@@ -1,32 +1,35 @@
+/* Import the Super Cool Font */
+@import url('https://fonts.cdnfonts.com/css/super-cool');
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Super Cool', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #a78edc, #f4a261);
 }
 
-.landing-page {
-    width: 100%;
-    height: 100%;
+.landing-page, .game-board {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .landing-box {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Super Cool', cursive;
     color: #a78edc;
     font-size: 48px;
 }
@@ -51,6 +54,29 @@ button:hover {
     background-color: #e76f51;
 }
 
+/* Grid styling for the game board */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background-color: #a78edc;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #FFF;
+    text-align: center;
+}
+
+.grid-item.crossed {
+    background-color: #2A9D8F;
+    text-decoration: line-through;
+}
+
+/* Fade animations */
 .fade-in {
     opacity: 0;
     animation: fadeIn 0.6s forwards;
@@ -69,4 +95,8 @@ button:hover {
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
+}
+
+.hidden {
+    display: none;
 }
