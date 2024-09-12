@@ -44,21 +44,25 @@ h2 {
 /* Grid container for items */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Set 2 columns */
-    gap: 15px;
-    max-width: 600px; /* Limit grid width */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Adjust gap between items */
+    justify-items: center; /* Center items horizontally */
+    margin-bottom: 30px; /* Add space between sections */
 }
 
-/* Game item styling */
+/* Style for grid items */
 .grid-item {
-    background-color: rgba(89, 77, 147, 0.8);
-    padding: 20px;
+    width: 100px; /* Fixed width for each block */
+    height: 100px; /* Fixed height */
+    background-color: #a78edc;
+    padding: 10px;
     border-radius: 10px;
-    color: #FFF;
     text-align: center;
+    color: #FFF;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
 }
 
 /* Links below text */
