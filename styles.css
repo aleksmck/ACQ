@@ -61,6 +61,17 @@ h2 {
     transform: scale(1.05);
 }
 
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;  /* Change from 100vh to auto */
+    width: 80vw;   /* Make the width more responsive */
+    margin: 0 auto; /* Center horizontally */
+}
+
+
 .grid-item.clicked {
     background-color: #4CAF50; /* Change color when clicked */
 }
@@ -77,6 +88,11 @@ h2 {
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     width: 350px;
+}
+
+
+#popup {
+    z-index: 1000;  /* Ensure it overlays correctly */
 }
 
 #popup p {
@@ -113,4 +129,7 @@ h2 {
 
 #reset-game:hover {
     background-color: #f4a261;
+}
+h1, h2 {
+    font-size: 2.5vw;  /* Adjust based on viewport width for responsive scaling */
 }
