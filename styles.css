@@ -1,7 +1,4 @@
-/* Import the Oranienbaum Font */
-@import url('https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap');
-
-/* General Styles */
+/* General Page Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -20,7 +17,6 @@ body, html {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(135deg, #a78edc, #f4a261);
     text-align: center;
 }
 
@@ -62,10 +58,44 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Styling for the Game Board */
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.grid-section {
+    margin: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+.grid-item {
+    background-color: #a78edc;
+    padding: 20px;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item:hover {
+    background-color: #7AA35C;
+    transform: scale(1.05);
 }
 
 .grid-item.clicked {
-    background-color: #e76f51;
+    background-color: #7AA35C;
 }
 
 .grid-item a {
