@@ -13,44 +13,55 @@ body, html {
     background: linear-gradient(135deg, #a78edc, #f4a261);
 }
 
-.landing-page, .game-board {
+/* Styling the Landing Page */
+.landing-page {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
-}
-
-.grid-section {
-    margin: 20px;
-}
-
-h1, h2 {
-    font-family: 'Oranienbaum', sans-serif;
-    color: #fff;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    justify-content: center;
-}
-
-.grid-item {
-    background-color: #a78edc;
-    padding: 20px;
-    border-radius: 10px;
-    color: #FFF;
+    background: linear-gradient(135deg, #a78edc, #f4a261);
     text-align: center;
+}
+
+.landing-box {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Oranienbaum', sans-serif;
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #f4a261;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.grid-item:hover {
-    background-color: #f4a261;
+button:hover {
+    background-color: #e76f51;
     transform: scale(1.05);
+}
+
 }
 
 .grid-item.clicked {
