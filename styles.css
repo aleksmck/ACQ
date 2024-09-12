@@ -3,12 +3,15 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Lengthwise', sans-serif; /* Make sure this matches the font link */
+    font-family: 'Poppins', sans-serif; /* Suggested font change */
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #a78edc, #f4a261);
+    background: linear-gradient(135deg, rgba(167, 142, 220, 0.4), rgba(244, 162, 97, 0.4)), 
+    url('https://angloville.com/wp-content/uploads/2023/05/1-1-1000x500.png') no-repeat center center;
+    background-size: cover;
 }
+
 
 /* Import the font */
 @import url('https://www.cufonfonts.com/font/lengthwise'); /* Ensure this is the correct link */
