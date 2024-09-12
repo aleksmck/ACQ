@@ -1,52 +1,51 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #a78edc, #f4a261);
+document.getElementById('start-game').addEventListener('click', function() {
+    // Smooth transition to the game
+    document.querySelector('.landing-page').classList.add('fade-out');
+    setTimeout(function() {
+        document.querySelector('.landing-page').style.display = 'none';
+        document.querySelector('.game-board').classList.remove('hidden');
+        document.querySelector('.game-board').classList.add('fade-in');
+    }, 600);
+});
+
+const gridItems = document.querySelectorAll('.grid-item');
+let completedLines = 0;
+
+gridItems.forEach(item => {
+    item.addEventListener('click', function() {
+        if (!item.classList.contains('crossed')) {
+            item.classList.add('crossed');
+            item.classList.add('fade-out');
+            setTimeout(function() {
+                checkWinCondition();
+            }, 500);  // Delay to make it smooth
+        }
+    });
+});
+
+function checkWinCondition() {
+    // Check for win conditions (rows, columns, diagonals)
+    completedLines++;
+    if (completedLines === 1) {
+        showPopup("You won tier one prize! Ask Alex about it");
+    } else if (completedLines === 2) {
+        showPopup("You won tier two prize! Ask Alex about it");
+    } else if (completedLines === 3) {
+        showPopup("You won tier three prize! Ask Alex about it");
+    }
 }
 
-.landing-page {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+function showPopup(message) {
+    const popup = document.getElementById('prize-popup');
+    document.getElementById('prize-text').textContent = message;
+    popup.classList.remove('hidden');
+    popup.classList.add('fade-in');
 }
 
-.landing-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h1 {
-    font-family: 'Lobster', cursive;
-    color: #a78edc;
-    font-size: 48px;
-}
-
-p {
-    font-size: 18px;
-    color: #555;
-    margin: 20px 0;
-}
-
-button {
-    padding: 12px 24px;
-    background-color: #f4a261;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #e76f51;
-}
+document.getElementById('close-popup').addEventListener('click', function() {
+    const popup = document.getElementById('prize-popup');
+    popup.classList.add('fade-out');
+    setTimeout(function() {
+        popup.classList.add('hidden');
+    }, 500);
+});
