@@ -79,8 +79,20 @@ function checkWinCondition() {
     }
 }
 
+let winMessages = [
+    "You won baby prize! Play more to find out what's the next prize",
+    "Whoa Lady! You rock! Ask Aleks for Your present!",
+    "Okey okey chill GIRL! Now Aleks will bankrupt",
+    "You won special kiss... Ask Aleks!"
+];
+let currentWin = 0;
+
 function showPopup() {
-    document.getElementById('popup').classList.remove('hidden');
+    if (currentWin < winMessages.length) {
+        document.getElementById('popup-text').innerText = winMessages[currentWin];
+        currentWin++;
+        document.getElementById('popup').classList.remove('hidden');
+    }
 }
 
 document.getElementById('close-popup').addEventListener('click', function() {
