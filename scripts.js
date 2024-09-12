@@ -1,13 +1,12 @@
-// Play cat noise on button click
 document.getElementById('start-game').addEventListener('click', function () {
-    const audio = new Audio('cat-meow.wav'); // Ensure you have a cat-meow.mp3 file in your project
-    audio.play();
+    document.querySelector('.landing-page').style.display = 'none';
+    document.querySelector('.game-board').classList.remove('hidden');
 });
 
 // Placeholder for game logic and popup handling
 let gridItems = document.querySelectorAll('.grid-item');
-let gridState = JSON.parse(localStorage.getItem('gridState')) || Array(4).fill(null).map(() => Array(4).fill(false));
-let prizesWon = JSON.parse(localStorage.getItem('prizesWon')) || 0;
+let gridState = Array(4).fill(null).map(() => Array(4).fill(false));
+let prizesWon = 0;
 
 const winMessages = [
     "You won baby prize! Play more to find out what's the next prize",
@@ -34,7 +33,6 @@ gridItems.forEach(item => {
             let row = parseInt(item.getAttribute('data-row'));
             let col = parseInt(item.getAttribute('data-col'));
             gridState[row][col] = true;
-            localStorage.setItem('gridState', JSON.stringify(gridState));
             checkForWin();
         }
     });
@@ -45,7 +43,6 @@ function checkForWin() {
         if (checkRows() || checkCols() || checkDiagonals()) {
             showPopup(prizesWon);
             prizesWon++;
-            localStorage.setItem('prizesWon', JSON.stringify(prizesWon));
         }
     }
 }
@@ -89,7 +86,5 @@ document.getElementById('close-popup').addEventListener('click', function () {
 
 // Reset Button functionality
 document.getElementById('reset-game').addEventListener('click', function () {
-    localStorage.removeItem('gridState');
-    localStorage.removeItem('prizesWon');
     location.reload(); // Reload the page to reset the game
 });
