@@ -14,6 +14,7 @@ let completedRows = Array(4).fill(false);
 let completedCols = Array(4).fill(false);
 let diagonal1Completed = false;
 let diagonal2Completed = false;
+let totalWins = 0; // Track how many winning combinations have been completed
 
 const gridItems = document.querySelectorAll('.grid-item');
 
@@ -42,27 +43,37 @@ gridItems.forEach(item => {
 
 // Check win conditions
 function checkWinCondition() {
+    let winCount = 0;
+
+    // Check rows
     for (let i = 0; i < 4; i++) {
         if (gridState[i].every(val => val === true) && !completedRows[i]) {
             completedRows[i] = true; // Mark the row as completed
-            showPopup();
-            return;
+            winCount++;
         }
+    }
+
+    // Check columns
+    for (let i = 0; i < 4; i++) {
         if (gridState.every(row => row[i] === true) && !completedCols[i]) {
             completedCols[i] = true; // Mark the column as completed
-            showPopup();
-            return;
+            winCount++;
         }
     }
 
     // Check diagonals
     if (gridState[0][0] && gridState[1][1] && gridState[2][2] && gridState[3][3] && !diagonal1Completed) {
         diagonal1Completed = true; // Mark diagonal 1 as completed
-        showPopup();
-        return;
+        winCount++;
     }
     if (gridState[0][3] && gridState[1][2] && gridState[2][1] && gridState[3][0] && !diagonal2Completed) {
         diagonal2Completed = true; // Mark diagonal 2 as completed
+        winCount++;
+    }
+
+    // If any new win is detected and it hasn't already triggered the popup
+    if (winCount > totalWins) {
+        totalWins = winCount;
         showPopup();
     }
 }
