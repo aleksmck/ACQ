@@ -1,10 +1,11 @@
 document.getElementById('start-game').addEventListener('click', function() {
+    // Remove landing page properly by hiding it and removing from the flow
     document.querySelector('.landing-page').classList.add('fade-out');
     setTimeout(function() {
-        document.querySelector('.landing-page').style.display = 'none';
+        document.querySelector('.landing-page').style.display = 'none'; // Hide landing page
         document.querySelector('.game-board').classList.remove('hidden');
-        document.querySelector('.game-board').classList.add('fade-in');
-    }, 600);
+        document.querySelector('.game-board').classList.add('fade-in');  // Show game board
+    }, 600);  // Timeout to let fade-out animation complete
 });
 
 // Load saved state from localStorage if available
@@ -15,7 +16,6 @@ let completedCols = Array(4).fill(false);
 let diagonal1Completed = false;
 let diagonal2Completed = false;
 let totalWins = 0; // Track how many winning combinations have been completed
-
 
 const gridItems = document.querySelectorAll('.grid-item');
 
