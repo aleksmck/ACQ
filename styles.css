@@ -6,6 +6,9 @@ body {
     background: linear-gradient(135deg, rgba(167, 142, 220, 0.4), rgba(244, 162, 97, 0.4)), 
                 url('https://angloville.com/wp-content/uploads/2023/05/1-1-1000x500.png') no-repeat center center;
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .landing-page, .game-board {
@@ -13,6 +16,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    flex-direction: column;
 }
 
 /* Landing Page */
@@ -37,6 +42,7 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 .landing-box button:hover {
@@ -100,6 +106,7 @@ body {
     padding: 2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    border-radius: 8px;
 }
 
 #popup p {
@@ -113,6 +120,7 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 #popup button:hover {
@@ -129,6 +137,7 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 #reset-game:hover {
@@ -153,17 +162,40 @@ body {
 }
 
 .grid-section:nth-child(1) h2 {
-    background-color: #4b0082; /* Dark purple */
+    background-color: transparent; /* No background */
 }
 
 .grid-section:nth-child(2) h2 {
-    background-color: #800080; /* Purple */
+    background-color: transparent; /* No background */
 }
 
 .grid-section:nth-child(3) h2 {
-    background-color: #9370DB; /* Medium purple */
+    background-color: transparent; /* No background */
 }
 
 .grid-section:nth-child(4) h2 {
-    background-color: #D8BFD8; /* Thistle */
+    background-color: transparent; /* No background */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .landing-box h1 {
+        font-size: 2em;
+    }
+
+    .landing-box p {
+        font-size: 1.2em;
+    }
+
+    .landing-box button {
+        font-size: 1em;
+    }
+
+    #reset-game {
+        font-size: 1em;
+    }
 }
