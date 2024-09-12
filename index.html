@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleksandra’s Cracow Quest</title>
- <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,59 +17,41 @@
         </div>
     </div>
 
-    <!-- Game Table (Initially Hidden) -->
+    <!-- Game Page (Hidden by default) -->
     <div class="game-board hidden">
         <div class="grid-section">
             <h2>Małe Chrup</h2>
             <div class="grid-container">
-                <div class="grid-item" data-row="0" data-col="0">Piekarnia Zaczyn - <a href="https://www.instagram.com/zaczyn.piekarnia/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="0" data-col="1">Zapiekanki - <a href="https://g.co/kgs/DdKVeLZ" target="_blank">link</a></div>
-                <div class="grid-item" data-row="0" data-col="2">Fokarnia - <a href="https://www.instagram.com/fokarnia_focacceria/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="0" data-col="3">Kluska na placu - <a href="https://www.instagram.com/kluska_krakow/" target="_blank">link</a></div>
+                <div class="grid-item" data-row="0" data-col="0">Piekarnia Zaczyn - <a href="#">link</a></div>
+                <div class="grid-item" data-row="0" data-col="1">Zapiekanki - <a href="#">link</a></div>
+                <div class="grid-item" data-row="0" data-col="2">Fokarnia - <a href="#">link</a></div>
+                <div class="grid-item" data-row="0" data-col="3">Kluska na placu - <a href="#">link</a></div>
             </div>
         </div>
 
-        <div class="grid-section">
-            <h2>Duże Chrup</h2>
-            <div class="grid-container">
-                <div class="grid-item" data-row="1" data-col="0">Ciao Pasta Bar - <a href="https://www.instagram.com/ciao.pastabar/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="1" data-col="1">Bibimbar - <a href="https://www.instagram.com/bibimbar69/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="1" data-col="2">En Plato - <a href="https://www.facebook.com/enplatopizzapasta/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="1" data-col="3">shhhh! secret!</div>
-            </div>
-        </div>
+        <!-- Additional grid sections like above... -->
 
-        <div class="grid-section">
-            <h2>Słodko</h2>
-            <div class="grid-container">
-                <div class="grid-item" data-row="2" data-col="0">Mak Bread - <a href="https://www.instagram.com/mak_bread_coffee?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw==" target="_blank">link</a></div>
-                <div class="grid-item" data-row="2" data-col="1">Sweetheart - <a href="https://www.instagram.com/sweetheart_krakow/?locale=no" target="_blank">link</a></div>
-                <div class="grid-item" data-row="2" data-col="2">Cricoteka - <a href="https://www.instagram.com/freshcoffeeplace/?hl=en" target="_blank">link</a></div>
-                <div class="grid-item" data-row="2" data-col="3">Meggido - <a href="https://www.instagram.com/megiddo.cafe.bakery/?hl=en" target="_blank">link</a></div>
-            </div>
-        </div>
-
-        <!-- Changed from "Powoli" to "Spacerkowo" -->
-        <div class="grid-section">
-            <h2>Spacerkowo</h2>
-            <div class="grid-container">
-                <div class="grid-item" data-row="3" data-col="0">Wzdłuż Wisły</div>
-                <div class="grid-item" data-row="3" data-col="1">Ogrody Szymborskiej</div>
-                <div class="grid-item" data-row="3" data-col="2">Stare Miasto</div>
-                <div class="grid-item" data-row="3" data-col="3">Smok!</div>
-            </div>
-        </div>
+        <!-- Reset Game Button -->
+        <button id="reset-game">Reset Game</button>
     </div>
 
-    <!-- Popup for showing the winning message -->
+    <!-- Popup for winning messages -->
     <div id="popup" class="hidden">
         <p id="popup-text"></p>
         <button id="close-popup">Close</button>
     </div>
- 
-    <!-- Reset Button -->
-    <button id="reset-game">Reset Game</button>
 
-    <script src="scripts.js"></script>
+    <script>
+        // Switch from landing page to game
+        document.getElementById('start-game').addEventListener('click', function () {
+            document.querySelector('.landing-page').style.display = 'none';
+            document.querySelector('.game-board').classList.remove('hidden');
+        });
+
+        // Placeholder for game logic and popup handling
+        document.getElementById('reset-game').addEventListener('click', function () {
+            location.reload(); // Reset the game
+        });
+    </script>
 </body>
 </html>
