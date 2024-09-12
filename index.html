@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksandra's Cracow Quest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lengthwise&display=swap" rel="stylesheet">
+    <title>Aleksandra’s Cracow Quest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- Landing Page -->
-    <div id="landing-page" class="landing-page">
-        <h1>Aleksandra's Cracow Quest</h1>
-        <p>Uncover, Explore, Win!</p>
-        <button id="start-game">Meow meow MEOW!</button>
+    <div class="landing-page">
+        <div class="landing-box">
+            <h1>Aleksandra’s Cracow Quest</h1>
+            <p>Uncover, Explore, Win!</p>
+            <button id="start-game">Meow meow MEOW!</button>
+        </div>
     </div>
 
-    <!-- Game Grid Page -->
-    <div id="game-board" class="game-board hidden">
-        <h2>Select your attractions!</h2>
-        <div class="grid-container">
-            <!-- Grid items go here, one for each attraction -->
-            <!-- Example -->
-            <div class="grid-item" data-row="0" data-col="0">Małe Chrup - Attraction 1</div>
-            <!-- Repeat for all grid items, with appropriate row and col data -->
+    <!-- Game Page (Hidden by default) -->
+    <div class="game-board hidden">
+        <div class="grid-section">
+            <h2>Małe Chrup</h2>
+            <div class="grid-container">
+                <div class="grid-item" data-row="0" data-col="0">Piekarnia Zaczyn - <a href="#">link</a></div>
+                <div class="grid-item" data-row="0" data-col="1">Zapiekanki - <a href="#">link</a></div>
+                <div class="grid-item" data-row="0" data-col="2">Fokarnia - <a href="#">link</a></div>
+                <div class="grid-item" data-row="0" data-col="3">Kluska na placu - <a href="#">link</a></div>
+            </div>
         </div>
+
+        <!-- Additional grid sections like above... -->
+
+        <!-- Reset Game Button -->
         <button id="reset-game">Reset Game</button>
     </div>
 
-    <!-- Popup for Prize Messages -->
-    <div id="prize-popup" class="popup hidden">
-        <div class="popup-content">
-            <p id="prize-message"></p>
-            <button id="close-popup">Close</button>
-        </div>
+    <!-- Popup for winning messages -->
+    <div id="popup" class="hidden">
+        <p id="popup-text"></p>
+        <button id="close-popup">Close</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Switch from landing page to game
+        document.getElementById('start-game').addEventListener('click', function () {
+            document.querySelector('.landing-page').style.display = 'none';
+            document.querySelector('.game-board').classList.remove('hidden');
+        });
+
+        // Placeholder for game logic and popup handling
+        document.getElementById('reset-game').addEventListener('click', function () {
+            location.reload(); // Reset the game
+        });
+    </script>
 </body>
 </html>
