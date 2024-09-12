@@ -75,4 +75,3 @@ document.getElementById('close-popup').addEventListener('click', function () {
 document.getElementById('reset-game').addEventListener('click', function () {
     location.reload(); // Reload the page to reset the game
 });
-
