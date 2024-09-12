@@ -1,70 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksandra’s Cracow Quest</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/lengthwise">
-</head>
-<body>
-    <!-- Landing Page -->
-    <div class="landing-page">
-        <div class="landing-box">
-            <h1>Aleksandra’s Cracow Quest</h1>
-            <p>Uncover, Explore, Win!</p>
-            <button id="start-game">Meow meow MEOW!</button>
-        </div>
-    </div>
+/* Import the Lengthwise Font */
+@import url('https://fonts.cdnfonts.com/css/lengthwise');
 
-    <!-- Game Table (Initially Hidden) -->
-    <div class="game-board hidden">
-        <div class="grid-section">
-            <h2>Małe Chrup</h2>
-            <div class="grid-container">
-                <div class="grid-item" data-row="0" data-col="0">Piekarnia Zaczyn - <a href="https://www.instagram.com/zaczyn.piekarnia/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="0" data-col="1">Zapiekanki - <a href="https://g.co/kgs/DdKVeLZ" target="_blank">link</a></div>
-                <div class="grid-item" data-row="0" data-col="2">Fokarnia - <a href="https://www.instagram.com/fokarnia_focacceria/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="0" data-col="3">Kluska na placu - <a href="https://www.instagram.com/kluska_krakow/" target="_blank">link</a></div>
-            </div>
-        </div>
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Lengthwise', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #a78edc, #f4a261);
+}
 
-        <div class="grid-section">
-            <h2>Duże Chrup</h2>
-            <div class="grid-container">
-                <div class="grid-item" data-row="1" data-col="0">Ciao Pasta Bar - <a href="https://www.instagram.com/ciao.pastabar/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="1" data-col="1">Bibimbar - <a href="https://www.instagram.com/bibimbar69/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="1" data-col="2">En Plato - <a href="https://www.facebook.com/enplatopizzapasta/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="1" data-col="3">shhhh! secret!</div>
-            </div>
-        </div>
+.landing-page, .game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
 
-        <div class="grid-section">
-            <h2>Słodko</h2>
-            <div class="grid-container">
-                <div class="grid-item" data-row="2" data-col="0">Baking Soda - <a href="https://www.instagram.com/bakingsoda.pl/" target="_blank">link</a></div>
-                <div class="grid-item" data-row="2" data-col="1">Sweetheart - <a href="https://www.instagram.com/sweetheart_krakow/?locale=no" target="_blank">link</a></div>
-                <div class="grid-item" data-row="2" data-col="2">Cricoteka - <a href="https://www.instagram.com/freshcoffeeplace/?hl=en" target="_blank">link</a></div>
-                <div class="grid-item" data-row="2" data-col="3">Meggido - <a href="https://www.instagram.com/megiddo.cafe.bakery/?hl=en" target="_blank">link</a></div>
-            </div>
-        </div>
+.grid-section {
+    margin: 20px;
+}
 
-        <div class="grid-section">
-            <h2>Powoli</h2>
-            <div class="grid-container">
-                <div class="grid-item" data-row="3" data-col="0">Wzdłuż Wisły</div>
-                <div class="grid-item" data-row="3" data-col="1">Ogrody Szymborskiej</div>
-                <div class="grid-item" data-row="3" data-col="2">Stare Miasto</div>
-                <div class="grid-item" data-row="3" data-col="3">Smok!</div>
-            </div>
-        </div>
-    </div>
+h1, h2 {
+    font-family: 'Lengthwise', sans-serif;
+}
 
-    <div id="popup" class="hidden">
-        <p>You won! Ask Alex what to do next.</p>
-        <button id="close-popup">Close</button>
-    </div>
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
 
-    <script src="scripts.js"></script>
-</body>
-</html>
+.grid-item {
+    background-color: #a78edc;
+    padding: 20px;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item:hover {
+    background-color: #f4a261;
+    transform: scale(1.05);
+}
+
+.grid-item.clicked {
+    background-color: #2A9D8F;
+}
+
+.grid-item a {
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.grid-item a:hover {
+    text-decoration: underline;
+}
+
+/* Popup Styling */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+#popup p {
+    font-size: 18px;
+    color: #333;
+}
+
+#close-popup {
+    padding: 10px 20px;
+    background-color: #f4a261;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#close-popup:hover {
+    background-color: #e76f51;
+}
+
+/* Hidden class for initial state */
+.hidden {
+    display: none;
+}
