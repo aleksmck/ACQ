@@ -96,8 +96,31 @@ button:hover {
     text-decoration: underline;
 }
 
+/* Category names in white */
+.grid-section h2 {
+    color: white;
+}
+
+/* Different shades of purple for each category */
+.grid-item[data-row="0"] {
+    background-color: #4B0082; /* Darker purple */
+}
+
+.grid-item[data-row="1"] {
+    background-color: #800080; /* Medium purple */
+}
+
+.grid-item[data-row="2"] {
+    background-color: #9370DB; /* Light purple */
+}
+
+.grid-item[data-row="3"] {
+    background-color: #D8BFD8; /* Lighter purple */
+}
+
+/* Change color on click */
 .grid-item.clicked {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green */
 }
 
 /* Popup */
