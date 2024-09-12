@@ -32,7 +32,7 @@ gridItems.forEach((item, index) => {
 gridItems.forEach(item => {
     item.addEventListener('click', function() {
         if (!item.classList.contains('clicked')) {
-            item.classList.add('clicked');
+            item.classList.add('clicked'); // Apply 'clicked' class
             let row = parseInt(item.getAttribute('data-row'));
             let col = parseInt(item.getAttribute('data-col'));
             gridState[row][col] = true;
