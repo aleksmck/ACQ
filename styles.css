@@ -29,60 +29,21 @@ body, html {
     width: 100%;
 }
 
-h1 {
-    font-family: 'Oranienbaum', sans-serif;
-    font-size: 48px;
-    color: #333;
-    margin-bottom: 10px;
+/* Violet Gradient for each row */
+.grid-section:nth-child(1) .grid-item {
+    background-color: #5e2a88; /* Darkest */
 }
-
-p {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 30px;
+.grid-section:nth-child(2) .grid-item {
+    background-color: #76449f;
 }
-
-button {
-    padding: 12px 24px;
-    background-color: #f4a261;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.grid-section:nth-child(3) .grid-item {
+    background-color: #9369b4;
 }
-
-button:hover {
-    background-color: #e76f51;
-    transform: scale(1.05);
-}
-
-/* Styling for the Game Board */
-.game-board {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-
-.grid-section {
-    width: 100%;
-    max-width: 800px;
-    margin-left: 20px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    justify-content: start;
+.grid-section:nth-child(4) .grid-item {
+    background-color: #b092c8; /* Lightest */
 }
 
 .grid-item {
-    background-color: #a78edc;
     padding: 20px;
     border-radius: 10px;
     color: #FFF;
