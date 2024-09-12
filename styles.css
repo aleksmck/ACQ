@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Montserrat Alternates', sans-serif; /* Font updated to Montserrat */
+    font-family: 'Montserrat Alternates', sans-serif; /* Updated Font */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ body, html {
     background-size: cover;
 }
 
-/* Headings and titles */
+/* Headings and Titles */
 h1 {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 52px;
@@ -29,7 +29,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Game item styling with links */
+/* Game item styling */
 .grid-item {
     background-color: rgba(89, 77, 147, 0.8);
     padding: 20px;
@@ -41,10 +41,11 @@ h2 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Links below text */
 .grid-item a {
     display: block;
     margin-top: 8px;
-    color: #FFD700; /* Gold link color for better contrast */
+    color: #FFD700; /* Gold link color */
     font-size: 14px;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -55,15 +56,13 @@ h2 {
     text-decoration: underline;
 }
 
-/* Styling for hovered items */
 .grid-item:hover {
     background-color: #7151a2;
     transform: scale(1.05);
 }
 
-/* Styling for clicked items */
 .grid-item.clicked {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Change color when clicked */
 }
 
 /* Popup Styling */
@@ -85,7 +84,20 @@ h2 {
     color: #333;
 }
 
-/* Reset button */
+#close-popup {
+    padding: 10px 20px;
+    background-color: #f4a261;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#close-popup:hover {
+    background-color: #e76f51;
+}
+
+/* Reset Button */
 #reset-game {
     position: fixed;
     bottom: 20px;
