@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Poppins', sans-serif; /* Suggested font change */
+    font-family: 'Montserrat Alternates', sans-serif; /* Font updated to Montserrat */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,129 +12,58 @@ body, html {
     background-size: cover;
 }
 
-
-/* Import the font */
-@import url('https://www.cufonfonts.com/font/lengthwise'); /* Ensure this is the correct link */
-
-/* Styling the Landing Page */
-.landing-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
-}
-
-.landing-box {
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-}
-
+/* Headings and titles */
 h1 {
-    font-family: 'Lengthwise', sans-serif;
-    font-size: 48px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
     color: #333;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
-p {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 30px;
+h2 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
 }
 
-button {
-    padding: 12px 24px;
-    background-color: #f4a261;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background-color: #e76f51;
-    transform: scale(1.05);
-}
-
-/* Styling for the Game Board */
-.game-board {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-
-/* Adjust grid section for alignment */
-.grid-section {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto; /* Center the grid sections */
-}
-
-/* Grid container for the items */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    justify-content: start; /* Keep the items aligned to the left inside the centered container */
-}
-
+/* Game item styling with links */
 .grid-item {
-    background-color: #a78edc;
+    background-color: rgba(89, 77, 147, 0.8);
     padding: 20px;
     border-radius: 10px;
     color: #FFF;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Add color gradients for rows */
-.grid-section:nth-child(1) .grid-item {
-    background-color: #5e2a88; /* Darkest */
-}
-.grid-section:nth-child(2) .grid-item {
-    background-color: #76449f;
-}
-.grid-section:nth-child(3) .grid-item {
-    background-color: #9369b4;
-}
-.grid-section:nth-child(4) .grid-item {
-    background-color: #b092c8; /* Lightest */
-}
-
-.grid-item:hover {
-    background-color: #7AA35C;
-    transform: scale(1.05);
-}
-
-/* Grid item clicked styling */
-.grid-item.clicked {
-    background-color: #7AA35C; /* Color to be applied when the item is clicked */
-    color: #FFF; /* Text color remains white */
-}
-
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .grid-item a {
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    font-size: 12px;
+    display: block;
+    margin-top: 8px;
+    color: #FFD700; /* Gold link color for better contrast */
+    font-size: 14px;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .grid-item a:hover {
+    color: #FFF; /* Links change color on hover */
     text-decoration: underline;
+}
+
+/* Styling for hovered items */
+.grid-item:hover {
+    background-color: #7151a2;
+    transform: scale(1.05);
+}
+
+/* Styling for clicked items */
+.grid-item.clicked {
+    background-color: #4CAF50;
 }
 
 /* Popup Styling */
@@ -147,58 +76,29 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 350px;
 }
 
 #popup p {
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
 }
 
-#close-popup {
-    padding: 10px 20px;
-    background-color: #f4a261;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-#close-popup:hover {
-    background-color: #e76f51;
-}
-
-/* Hidden class for initial state */
-.hidden {
-    display: none;
-}
-
-/* Reset button styling */
+/* Reset button */
 #reset-game {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 8px 16px;
+    padding: 10px 20px;
     background-color: #e76f51;
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 #reset-game:hover {
     background-color: #f4a261;
-}
-
-/* Titles (Group Headers) */
-h2 {
-    font-family: 'Lengthwise', sans-serif; /* Apply custom font */
-    font-size: 28px;
-    color: #333;
-    text-align: left;
-    margin-bottom: 10px;
-    padding-left: 20px;
 }
