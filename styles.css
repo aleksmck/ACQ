@@ -45,16 +45,32 @@ h2 {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 20px; /* Adjust gap between items */
-    justify-items: center; /* Center items horizontally */
-    margin-bottom: 30px; /* Add space between sections */
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 30px;
+}
+
+/* Add color gradients for each row */
+.grid-section:nth-child(1) .grid-item {
+    background-color: #5e2a88; /* Darkest purple for the first row */
+}
+
+.grid-section:nth-child(2) .grid-item {
+    background-color: #76449f; /* Lighter purple for the second row */
+}
+
+.grid-section:nth-child(3) .grid-item {
+    background-color: #9369b4; /* Even lighter purple */
+}
+
+.grid-section:nth-child(4) .grid-item {
+    background-color: #b092c8; /* Lightest purple */
 }
 
 /* Style for grid items */
 .grid-item {
-    width: 100px; /* Fixed width for each block */
-    height: 100px; /* Fixed height */
-    background-color: #a78edc;
+    width: 100px;
+    height: 100px;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
@@ -63,6 +79,8 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
+.grid-item.clicked {
+    background-color: #4CAF50; /* Change to green when clicked */
 }
 
 /* Links below text */
@@ -78,16 +96,6 @@ h2 {
 .grid-item a:hover {
     color: #FFF;
     text-decoration: underline;
-}
-
-/* Hover effects */
-.grid-item:hover {
-    background-color: #7151a2;
-    transform: scale(1.05);
-}
-
-.grid-item.clicked {
-    background-color: #4CAF50;
 }
 
 /* Popup Styling */
