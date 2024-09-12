@@ -4,31 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleksandra’s Cracow Quest</title>
-    <!-- Link to Super Cool Font -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/super-cool">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/lengthwise">
 </head>
 <body>
+    <!-- Landing Page -->
     <div class="landing-page">
         <div class="landing-box">
             <h1>Aleksandra’s Cracow Quest</h1>
-            <p>Uncover, Explore, Win! Are you ready?</p>
-            <button id="start-game">Meow meow MEOW! </button>
+            <p>Uncover, Explore, Win!</p>
+            <button id="start-game">Meow meow MEOW!</button>
         </div>
     </div>
 
+    <!-- Game Table (Initially Hidden) -->
     <div class="game-board hidden">
-        <h2>Choose Your Adventures!</h2>
+        <h2 class="category-title">Małe Chrup</h2>
         <div class="grid-container">
-            <!-- Example of Grid Item -->
-            <div class="grid-item">Piekarnia Zaczyn</div>
-            <div class="grid-item">Zapiekanki</div>
-            <!-- Add your places here -->
+            <div class="grid-item"><a href="https://www.instagram.com/zaczyn.piekarnia/" target="_blank">Piekarnia Zaczyn</a></div>
+            <div class="grid-item"><a href="https://g.co/kgs/DdKVeLZ" target="_blank">Zapiekanki</a></div>
+            <div class="grid-item"><a href="https://www.instagram.com/fokarnia_focacceria/" target="_blank">Fokarnia</a></div>
+            <div class="grid-item"><a href="https://www.instagram.com/kluska_krakow/" target="_blank">Kluska na placu</a></div>
         </div>
 
-        <div id="prize-popup" class="hidden">
-            <p id="prize-text"></p>
-            <button id="close-popup">Close</button>
+        <h2 class="category-title">Duże Chrup</h2>
+        <div class="grid-container">
+            <div class="grid-item"><a href="https://www.instagram.com/ciao.pastabar/" target="_blank">Ciao Pasta Bar</a></div>
+            <div class="grid-item"><a href="https://www.instagram.com/bibimbar69/" target="_blank">Bibimbar</a></div>
+            <div class="grid-item"><a href="https://www.facebook.com/enplatopizzapasta/" target="_blank">En Plato</a></div>
+            <div class="grid-item">shhhh! secret!</div>
+        </div>
+
+        <h2 class="category-title">Słodko</h2>
+        <div class="grid-container">
+            <div class="grid-item"><a href="https://www.instagram.com/bakingsoda.pl/" target="_blank">Baking Soda</a></div>
+            <div class="grid-item"><a href="https://www.instagram.com/sweetheart_krakow/?locale=no" target="_blank">Sweetheart</a></div>
+            <div class="grid-item"><a href="https://www.instagram.com/freshcoffeeplace/?hl=en" target="_blank">Cricoteka</a></div>
+            <div class="grid-item"><a href="https://www.instagram.com/megiddo.cafe.bakery/?hl=en" target="_blank">Meggido</a></div>
+        </div>
+
+        <h2 class="category-title">Powoli chodzimy</h2>
+        <div class="grid-container">
+            <div class="grid-item">Wzdłuż Wisły</div>
+            <div class="grid-item">Ogrody Szymborskiej</div>
+            <div class="grid-item">Stare Miasto</div>
+            <div class="grid-item">Smok!</div>
         </div>
     </div>
 
