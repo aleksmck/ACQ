@@ -7,13 +7,26 @@ document.getElementById('start-game').addEventListener('click', function() {
     }, 600);
 });
 
-const gridItems = document.querySelectorAll('.grid-item');
-let gridState = Array(4).fill(null).map(() => Array(4).fill(false));
-let completedRows = Array(4).fill(false); // To track completed rows
-let completedCols = Array(4).fill(false); // To track completed columns
+// Load saved state from localStorage if available
+let savedState = JSON.parse(localStorage.getItem('gridState')) || Array(4).fill(null).map(() => Array(4).fill(false));
+let gridState = savedState;
+let completedRows = Array(4).fill(false);
+let completedCols = Array(4).fill(false);
 let diagonal1Completed = false;
 let diagonal2Completed = false;
 
+const gridItems = document.querySelectorAll('.grid-item');
+
+// Load previous selections
+gridItems.forEach((item, index) => {
+    let row = Math.floor(index / 4);
+    let col = index % 4;
+    if (gridState[row][col]) {
+        item.classList.add('clicked');
+    }
+});
+
+// Add click event to each grid item
 gridItems.forEach(item => {
     item.addEventListener('click', function() {
         if (!item.classList.contains('clicked')) {
@@ -21,23 +34,20 @@ gridItems.forEach(item => {
             let row = parseInt(item.getAttribute('data-row'));
             let col = parseInt(item.getAttribute('data-col'));
             gridState[row][col] = true;
+            localStorage.setItem('gridState', JSON.stringify(gridState)); // Save state to localStorage
             checkWinCondition();
         }
     });
 });
 
+// Check win conditions
 function checkWinCondition() {
-    // Check rows
     for (let i = 0; i < 4; i++) {
         if (gridState[i].every(val => val === true) && !completedRows[i]) {
             completedRows[i] = true; // Mark the row as completed
             showPopup();
             return;
         }
-    }
-
-    // Check columns
-    for (let i = 0; i < 4; i++) {
         if (gridState.every(row => row[i] === true) && !completedCols[i]) {
             completedCols[i] = true; // Mark the column as completed
             showPopup();
@@ -45,14 +55,12 @@ function checkWinCondition() {
         }
     }
 
-    // Check diagonal 1 (top-left to bottom-right)
+    // Check diagonals
     if (gridState[0][0] && gridState[1][1] && gridState[2][2] && gridState[3][3] && !diagonal1Completed) {
         diagonal1Completed = true; // Mark diagonal 1 as completed
         showPopup();
         return;
     }
-
-    // Check diagonal 2 (top-right to bottom-left)
     if (gridState[0][3] && gridState[1][2] && gridState[2][1] && gridState[3][0] && !diagonal2Completed) {
         diagonal2Completed = true; // Mark diagonal 2 as completed
         showPopup();
@@ -65,4 +73,10 @@ function showPopup() {
 
 document.getElementById('close-popup').addEventListener('click', function() {
     document.getElementById('popup').classList.add('hidden');
+});
+
+// Reset Button functionality
+document.getElementById('reset-game').addEventListener('click', function() {
+    localStorage.clear(); // Clear saved game
+    location.reload(); // Reload the page
 });
