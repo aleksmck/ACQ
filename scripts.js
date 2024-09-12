@@ -16,6 +16,8 @@ const winMessages = [
     "You won special kiss... Ask Aleks!"
 ];
 
+const meowSound = new Audio('cat-meow.wav');
+
 gridItems.forEach(item => {
     item.addEventListener('click', function () {
         if (!item.classList.contains('clicked')) {
@@ -24,6 +26,7 @@ gridItems.forEach(item => {
             let row = parseInt(item.getAttribute('data-row'));
             let col = parseInt(item.getAttribute('data-col'));
             gridState[row][col] = true;
+            meowSound.play(); // Play meow sound on click
             checkForWin();
         }
     });
