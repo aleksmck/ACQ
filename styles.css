@@ -36,6 +36,16 @@ h1 {
     margin-bottom: 10px;
 }
 
+h2 {
+    font-family: 'Oranienbaum', sans-serif;
+    font-size: 28px; /* Increase size for better aesthetics */
+    color: #333;
+    text-align: left; /* Align to the left */
+    margin-bottom: 10px;
+    padding-left: 20px; /* Add some padding for spacing */
+}
+
+
 p {
     font-size: 20px;
     color: #666;
