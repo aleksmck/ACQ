@@ -1,7 +1,7 @@
-// Switch from landing page to game
+// Play cat noise on button click
 document.getElementById('start-game').addEventListener('click', function () {
-    document.querySelector('.landing-page').style.display = 'none';
-    document.querySelector('.game-board').classList.remove('hidden');
+    const audio = new Audio('cat-meow.mp3'); // Ensure you have a cat-meow.mp3 file in your project
+    audio.play();
 });
 
 // Placeholder for game logic and popup handling
