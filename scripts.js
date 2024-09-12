@@ -16,6 +16,7 @@ let diagonal1Completed = false;
 let diagonal2Completed = false;
 let totalWins = 0; // Track how many winning combinations have been completed
 
+
 const gridItems = document.querySelectorAll('.grid-item');
 
 // Load previous selections
