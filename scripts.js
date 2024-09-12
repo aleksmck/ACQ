@@ -1,6 +1,6 @@
 // Play cat noise on button click
 document.getElementById('start-game').addEventListener('click', function () {
-    const audio = new Audio('cat-meow.mp3'); // Ensure you have a cat-meow.mp3 file in your project
+    const audio = new Audio('cat-meow.wav'); // Ensure you have a cat-meow.mp3 file in your project
     audio.play();
 });
 
