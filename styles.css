@@ -1,81 +1,47 @@
-/* General Styles */
-body {
-    font-family: 'Lengthwise', sans-serif;
-    background: url('background-cracow.jpg') no-repeat center center fixed;
-    background-size: cover;
+body, html {
     margin: 0;
+    padding: 0;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-}
-
-/* Landing Page */
-.landing-page {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 50px;
-    border-radius: 10px;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Game Board */
-.game-board {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    background: linear-gradient(135deg, rgba(167, 142, 220, 0.5), rgba(244, 162, 97, 0.5)), 
+    url('https://angloville.com/wp-content/uploads/2023/05/1-1-1000x500.png') no-repeat center center;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.grid-item {
-    background-color: lightgrey;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.grid-item.selected {
-    background-color: #6a1b9a;
-    color: white;
-}
-
-/* Popup */
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-.popup-content {
+.landing-container {
     text-align: center;
+    color: #fff;
 }
 
-/* Reset Button */
-#reset-game {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff6f00;
-    color: white;
+.landing-box {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: #e76f51;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #f4a261;
 }
