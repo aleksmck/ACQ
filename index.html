@@ -3,47 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksandra’s Cracow Quest</title>
+    <title>Aleksandra's Cracow Quest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="landing-page">
-    <h1>Aleksandra’s Cracow Quest</h1>
+    <div id="landing-page" class="container">
+        <h1>Aleksandra's Cracow Quest</h1>
         <h2>Uncover, Explore, Win!</h2>
-    <p id="landing-text"> Every step brings you closer to something special...</p>
-    <button id="start-game">Start the Game</button>
-</div>
-
-
-    <div class="game-board hidden">
-        <h2>Choose Your Adventures!</h2>
-        <div class="grid-container">
-            <!-- Each grid item will represent an attraction -->
-            <div class="grid-item">Kawiarnia: Muzeum Sztuki Awangardowej</div>
-            <div class="grid-item">Spacer wzdłuż Wisły</div>
-            <div class="grid-item">Piekarnia Zaczyn</div>
-            <div class="grid-item">MOCK ART Museum</div>
-            <div class="grid-item">Harris Puano Jazz Bar</div>
-            <div class="grid-item">Zapiekanki</div>
-            <div class="grid-item">Targi vintage i retro</div>
-            <div class="grid-item">Ciao Pasta Bar</div>
-            <div class="grid-item">Spacer bo Starym Mieście</div>
-            <div class="grid-item">Muzeum Czartoryski</div>
-            <div class="grid-item">The Artist Cocktail Bar</div>
-            <div class="grid-item">Kluska na placu</div>
-            <div class="grid-item">Mercy Brown</div>
-            <div class="grid-item">Termy Krakowskie</div>
-            <div class="grid-item">Ogrody Szymborskiej</div>
-        </div>
-
-        <div id="prize-popup" class="hidden">
-            <p id="prize-text"></p>
-            <button id="close-popup">Close</button>
-        </div>
+        <p>Every step brings you closer to something special...</p>
+        <button id="start-quest">Start Your Quest</button>
     </div>
 
-    <script src="scripts.js"></script>
+    <div id="game-board" class="game-container" style="display: none;">
+        <h1>Krakow Trip Game</h1>
+        <div class="game-board">
+            <div class="category">
+                <h2>Małe chrup</h2>
+                <div class="attraction" data-link="https://www.instagram.com/zaczyn.piekarnia/">Piekarnia Zaczyn</div>
+                <div class="attraction" data-link="https://g.co/kgs/DdKVeLZ">Zapiekanki</div>
+                <div class="attraction" data-link="https://www.instagram.com/fokarnia_focacceria/">Fokarnia</div>
+                <div class="attraction" data-link="https://www.instagram.com/kluska_krakow/">Kluska na placu</div>
+            </div>
+            <div class="category">
+                <h2>Duże chrup</h2>
+                <div class="attraction" data-link="https://www.instagram.com/ciao.pastabar/">Ciao Pasta Bar</div>
+                <div class="attraction" data-link="https://www.instagram.com/bibimbar69/">Bibimbar</div>
+                <div class="attraction" data-link="https://www.facebook.com/enplatopizzapasta/">En Plato</div>
+                <div class="attraction" data-link="#">shhhh! secret!</div>
+            </div>
+            <div class="category">
+                <h2>Słodko</h2>
+                <div class="attraction" data-link="https://www.instagram.com/bakingsoda.pl/">Baking Soda</div>
+                <div class="attraction" data-link="https://www.instagram.com/sweetheart_krakow/?locale=no">Sweetheart</div>
+                <div class="attraction" data-link="https://www.instagram.com/freshcoffeeplace/?hl=en">Cricoteka</div>
+                <div class="attraction" data-link="https://www.instagram.com/megiddo.cafe.bakery/?hl=en">Meggido</div>
+            </div>
+            <div class="category">
+                <h2>Chodzenie</h2>
+                <div class="attraction" data-link="#">Wzdłuż Wisły</div>
+                <div class="attraction" data-link="#">Ogrody Szymborskiej</div>
+                <div class="attraction" data-link="#">Stare Miasto</div>
+                <div class="attraction" data-link="#">Smok!</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
-
