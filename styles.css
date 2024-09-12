@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Lengthwise', sans-serif; /* Reverted back to Lengthwise */
+    font-family: 'Lengthwise', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +29,26 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* Game Board Centering */
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%; /* Ensure full width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Grid container for items */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Set 2 columns */
+    gap: 15px;
+    max-width: 600px; /* Limit grid width */
+}
+
 /* Game item styling */
 .grid-item {
     background-color: rgba(89, 77, 147, 0.8);
@@ -52,32 +72,23 @@ h2 {
 }
 
 .grid-item a:hover {
-    color: #FFF; /* Links change color on hover */
+    color: #FFF;
     text-decoration: underline;
 }
 
+/* Hover effects */
 .grid-item:hover {
     background-color: #7151a2;
     transform: scale(1.05);
 }
 
-.game-board {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;  /* Change from 100vh to auto */
-    width: 80vw;   /* Make the width more responsive */
-    margin: 0 auto; /* Center horizontally */
-}
-
-
 .grid-item.clicked {
-    background-color: #4CAF50; /* Change color when clicked */
+    background-color: #4CAF50;
 }
 
 /* Popup Styling */
 #popup {
+    z-index: 1000;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -88,11 +99,6 @@ h2 {
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     width: 350px;
-}
-
-
-#popup {
-    z-index: 1000;  /* Ensure it overlays correctly */
 }
 
 #popup p {
@@ -129,7 +135,4 @@ h2 {
 
 #reset-game:hover {
     background-color: #f4a261;
-}
-h1, h2 {
-    font-size: 2.5vw;  /* Adjust based on viewport width for responsive scaling */
 }
