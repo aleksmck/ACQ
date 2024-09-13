@@ -95,6 +95,7 @@ body {
     cursor: pointer;
     height: 100px; /* Ensure uniform height */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -102,6 +103,8 @@ body {
 .grid-item a {
     color: white;
     text-decoration: underline;
+    margin-top: 0.5em; /* Add some space between text and link */
+    display: block; /* Ensure the link is displayed as a block element */
 }
 
 .grid-item a:hover {
