@@ -16,7 +16,18 @@ const winMessages = [
     "You won special kiss... Ask Aleks!"
 ];
 
-const meowSound = new Audio('cat-meow.wav');
+const catSounds = [
+    new Audio('cat1.wav'),
+    new Audio('cat2.wav'),
+    new Audio('cat3.wav'),
+    new Audio('cat4.wav'),
+    new Audio('cat5.wav')
+];
+
+function playRandomCatSound() {
+    const randomIndex = Math.floor(Math.random() * catSounds.length);
+    catSounds[randomIndex].play();
+}
 
 gridItems.forEach(item => {
     item.addEventListener('click', function () {
@@ -26,7 +37,7 @@ gridItems.forEach(item => {
             let row = parseInt(item.getAttribute('data-row'));
             let col = parseInt(item.getAttribute('data-col'));
             gridState[row][col] = true;
-            meowSound.play(); // Play meow sound on click
+            playRandomCatSound(); // Play random cat sound on click
             checkForWin();
         }
     });
